@@ -16,7 +16,8 @@ def process_exists(process_name):
     :param process_name: process_name
     """
     try:
-        subprocess.check_output(["pgrep", process_name])
+        proc = subprocess.check_output(["pgrep", process_name])
+        print(proc)
         return True
     except subprocess.CalledProcessError:
         return False
